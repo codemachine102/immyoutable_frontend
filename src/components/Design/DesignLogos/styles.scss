@@ -1,0 +1,117 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.designLogos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 20px;
+  width: 100%;
+  row-gap: 16px;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: calc(100% / 3);
+    // min-width: 180px;
+
+    img {
+      width: 145px;
+      height: auto;
+    }
+  }
+
+  &__loader {
+    width: calc(100% / 3);
+    // min-width: 180px;
+
+    &Circle {
+      width: 145px;
+      height: 145px;
+      transform: translate(-75px, 0);
+    }
+  }
+
+  &__btn {
+    margin: 50px auto 0;
+
+    span {
+      font-size: 12px;
+      line-height: 21px;
+      color: $white;
+    }
+  }
+
+  @media screen and (max-width: $lg) {
+    justify-content: flex-start;
+
+    &__logo {
+      img {
+        width: 130px;
+      }
+    }
+
+    &__loader {
+      &Circle {
+        width: 130px;
+        height: 130px;
+        transform: translate(-65px, 0);
+      }
+    }
+
+    &__logo,
+    &__loader {
+      width: 50%;
+    }
+  }
+  @media screen and (max-width: $md) {
+    justify-content: center;
+    padding: 0;
+
+    &__logo {
+      img {
+        width: 110px;
+      }
+    }
+
+    &__loader {
+      &Circle {
+        width: 110px;
+        height: 110px;
+        transform: translate(-55px, 0);
+      }
+    }
+
+    &__btn {
+      margin-top: 40px;
+    }
+  }
+  @media screen and (max-width: $sm) {
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 8px;
+
+    &__logo,
+    &__loader {
+      width: calc(100% / 4 - 8px);
+      min-width: 110px;
+    }
+    &__btn {
+      margin-top: 30px;
+    }
+  }
+  @media screen and (max-width: $xs) {
+    &__logo,
+    &__loader {
+      width: calc(100% / 3 - 8px);
+    }
+  }
+  @media screen and (max-width: $xxs) {
+    &__logo,
+    &__loader {
+      width: calc(100% / 2 - 8px);
+    }
+  }
+}

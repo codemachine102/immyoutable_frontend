@@ -1,0 +1,92 @@
+@import '../../scss/mixins.scss';
+@import '../../scss/vars.scss';
+
+.slider {
+  //   width: 60%;
+  width: 100%;
+  position: relative;
+
+  &__item {
+  }
+
+  &__button {
+    position: absolute;
+    z-index: 5;
+
+    &--prev {
+      top: 0;
+      left: 0;
+    }
+
+    &--next {
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &--disabled {
+    display: flex;
+    gap: 32px;
+
+    .slider__item {
+      flex: 1;
+    }
+  }
+}
+
+.swiper {
+  padding: 20px 15px;
+  margin: -20px -15px;
+
+  &-button {
+    &-next {
+      @include swiper_button;
+      right: -26px;
+
+      &-pagination {
+        transform: translateY(-22px);
+      }
+      &:after {
+        display: none;
+      }
+    }
+    &-prev {
+      @include swiper_button;
+      left: -26px;
+      transform: rotateY(180deg);
+
+      &-pagination {
+        transform: rotateY(180deg) translateY(-22px);
+      }
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  &-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 42px;
+
+    &-bullet {
+      width: 16px;
+      height: 3px;
+      background: #ffffff;
+      opacity: 0.3;
+      @include transition_linear;
+
+      &-active {
+        opacity: 1;
+        width: 24px;
+      }
+    }
+  }
+
+  &--disabledCard {
+    padding-top: 80px;
+    margin-top: -80px;
+  }
+}

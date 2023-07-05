@@ -1,0 +1,45 @@
+@import '../../scss/mixins.scss';
+@import '../../scss/vars.scss';
+
+.otp {
+  height: 62px;
+  width: 50px;
+  justify-content: center;
+  background: rgba($white, 0.05);
+  border: 1px solid rgba($white, 0.05);
+  border-radius: 5px;
+
+  &:not(.otp--error):has(input:not(:placeholder-shown)) {
+    border-color: $white;
+  }
+
+  &:has(.otp--focuse) {
+    border-color: $white;
+  }
+
+  &__container {
+    justify-content: space-between;
+  }
+
+  input {
+    background-color: initial;
+    border: none;
+    padding: 0;
+
+    font-family: $CP;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    color: $white;
+  }
+
+  &__error {
+    @include text_placeholder;
+    color: $red;
+  }
+
+  &--error {
+    border-color: $red;
+  }
+}

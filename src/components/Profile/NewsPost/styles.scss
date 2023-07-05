@@ -1,0 +1,83 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.newsPost {
+  display: flex;
+  flex-direction: column;
+  color: $white;
+
+  &__img {
+    width: 100%;
+    margin: 12px 0;
+    min-height: 300px;
+    background-color: $grey_shades_70;
+    object-fit: cover;
+  }
+
+  &__header {
+    display: flex;
+    gap: 16px;
+
+    &Logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 100%;
+      background-color: $white;
+    }
+
+    &Info {
+      display: flex;
+      flex-direction: column;
+      // justify-content: space-between;
+    }
+
+    &Title {
+      @include text_newsTitle;
+    }
+
+    &Followers {
+      @include text_newsSmall;
+      color: $grey_shades_30;
+    }
+
+    &Time {
+      @include text_newsSmall;
+      color: $grey_shades_30;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    p {
+      @include text_newsText;
+      width: 100%;
+      color: $white;
+    }
+
+    &Btn {
+      align-self: flex-end;
+      span {
+        color: $white;
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__title {
+    background: rgba($white, 0.06);
+    border-radius: 4px;
+    padding: 10px;
+
+    h3 {
+      @include text_newsTitle;
+    }
+
+    &Time {
+      @include text_newsSmall;
+      color: $grey_shades_30;
+    }
+  }
+}

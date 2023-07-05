@@ -1,0 +1,61 @@
+@import '../../scss/mixins.scss';
+@import '../../scss/vars.scss';
+
+.dropdown {
+  display: none;
+  position: absolute;
+  bottom: -15px;
+  right: 0;
+  width: 225px;
+  transform: translateY(100%);
+  border: 1px solid rgba(14, 117, 191, 0.6);
+  box-shadow: 0px 0px 6px $shadow_blue;
+  backdrop-filter: blur(6px);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 10;
+
+  &--open {
+    display: block;
+  }
+
+  &__link {
+    padding: 12px 16px;
+
+    font-family: $Plateia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+
+    color: $white;
+    text-align: left;
+    display: block;
+    background: $dropdownBackground;
+    border-bottom: 1px solid rgba(14, 117, 191, 0.6);
+
+    &--active {
+      background: $dropdownBackground_active;
+      color: $blue;
+    }
+
+    &:hover {
+      background: $dropdownBackground_hover;
+    }
+
+    &:first-child {
+      border-radius: 8px 8px 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 8px 8px;
+      border: none;
+    }
+
+    &--inactive {
+      &:hover {
+        background: $dropdownBackground;
+      }
+    }
+  }
+}

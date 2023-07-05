@@ -1,0 +1,14 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.profileVerifyDegree {
+  &__modal {
+    padding-bottom: 20px;
+    // min-width: 700px;
+    &Text {
+      font-size: 32px;
+      line-height: 48px;
+      color: #ffffff;
+    }
+  }
+}

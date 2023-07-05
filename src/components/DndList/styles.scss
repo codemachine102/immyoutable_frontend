@@ -1,0 +1,22 @@
+@import '../../scss/mixins.scss';
+@import '../../scss/vars.scss';
+
+.dndList {
+  display: flex;
+  flex-direction: column;
+  margin: -12px 0;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+
+    @include text_placeholder;
+    color: $white;
+  }
+
+  &__itemDrag {
+    cursor: grab;
+  }
+}

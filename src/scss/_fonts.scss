@@ -1,0 +1,41 @@
+$codec_font_path: '../assets/fonts';
+
+// @font-face {
+//   font-family: 'Codec Pro Regular';
+//   font-style: normal;
+//   font-weight: normal;
+//   src: local('Codec Pro Regular'), url('CodecPro-Regular.woff') format('woff');
+// }
+
+$fonts_path: '../assets/fonts';
+
+@font-face {
+  src: url('#{$fonts_path}/CodecPro-Light.ttf') format('truetype');
+  font-family: 'Codec Pro';
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  src: url('#{$fonts_path}/CodecPro-News.ttf') format('truetype');
+  font-family: 'Codec Pro';
+  font-style: normal;
+  font-weight: 350;
+}
+@font-face {
+  src: url('#{$fonts_path}/CodecPro-Regular.ttf') format('truetype');
+  font-family: 'Codec Pro';
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  src: url('#{$fonts_path}/CodecPro-Bold.ttf') format('truetype');
+  font-family: 'Codec Pro';
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  src: url('#{$fonts_path}/Plateia.ttf') format('truetype');
+  font-family: 'Plateia';
+  font-style: normal;
+  font-weight: 400;
+}

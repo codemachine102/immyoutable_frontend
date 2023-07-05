@@ -1,0 +1,72 @@
+@import '../../scss/vars.scss';
+@import '../../scss/mixins.scss';
+
+.authLayout {
+  &__container {
+    color: white;
+    width: 100%;
+    min-height: 100vh;
+    background-color: $profile_background;
+    background-image: url('../../assets/img/auth_background.jpg');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    display: flex;
+    overflow: hidden;
+  }
+  &__left {
+    flex: 0 1 55%;
+    background: rgba(12, 14, 14, 0.4);
+    border-radius: 0px 40px 40px 0px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  &__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 32px;
+    padding-top: 5px;
+
+    &Logo {
+      width: 100%;
+      max-width: 153px;
+    }
+  }
+  &__content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+  }
+  &__right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25px;
+
+    &Logo {
+      width: 100%;
+      max-width: 340px;
+    }
+  }
+  @media screen and (max-width: $sm) {
+    &__left {
+      flex: 0 1 100%;
+    }
+    &__right {
+      display: none;
+    }
+    &__content {
+      padding: 0 32px;
+    }
+    &__header {
+      left: 50%;
+      transform: translateX(-50%);
+      padding-left: 0;
+    }
+  }
+}

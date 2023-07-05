@@ -1,0 +1,227 @@
+@import '../scss/vars.scss';
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-size: 14px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:focus {
+  outline: none;
+  // color: inherit;
+}
+
+input,
+textarea {
+  outline: none;
+  border-width: 0;
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+button {
+  outline: none;
+  border-width: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+body {
+  font-family: $CP;
+  font-weight: 400;
+  background-color: $general_background;
+
+  &.body__onboarding {
+    background-color: $profile_background;
+  }
+  &.body__auth {
+    background-color: $profile_background;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+  background-color: transparent !important;
+}
+textarea {
+  resize: none;
+}
+
+.mb {
+  &a {
+    margin-bottom: auto;
+  }
+  &4 {
+    margin-bottom: 4px;
+  }
+  &8 {
+    margin-bottom: 8px;
+  }
+  &16 {
+    margin-bottom: 16px;
+  }
+  &18 {
+    margin-bottom: 18px;
+  }
+  &24 {
+    margin-bottom: 24px;
+  }
+  &32 {
+    margin-bottom: 32px;
+  }
+  &48 {
+    margin-bottom: 48px;
+  }
+}
+.mt {
+  &a {
+    margin-top: auto;
+  }
+  &4 {
+    margin-top: 4px;
+  }
+  &8 {
+    margin-top: 8px;
+  }
+  &16 {
+    margin-top: 16px;
+  }
+  &18 {
+    margin-top: 18px;
+  }
+  &24 {
+    margin-top: 24px;
+  }
+  &32 {
+    margin-top: 32px;
+  }
+  &48 {
+    margin-top: 48px;
+  }
+}
+.ml {
+  &a {
+    margin-left: auto;
+  }
+  &4 {
+    margin-left: 4px;
+  }
+  &8 {
+    margin-left: 8px;
+  }
+  &16 {
+    margin-left: 16px;
+  }
+  &18 {
+    margin-left: 18px;
+  }
+  &24 {
+    margin-left: 24px;
+  }
+  &32 {
+    margin-left: 32px;
+  }
+  &48 {
+    margin-left: 48px;
+  }
+}
+.mr {
+  &a {
+    margin-right: auto;
+  }
+  &4 {
+    margin-right: 4px;
+  }
+  &8 {
+    margin-right: 8px;
+  }
+  &16 {
+    margin-right: 16px;
+  }
+  &18 {
+    margin-right: 18px;
+  }
+  &24 {
+    margin-right: 24px;
+  }
+  &32 {
+    margin-right: 32px;
+  }
+  &48 {
+    margin-right: 48px;
+  }
+}
+
+.space-beetwen {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-baseline {
+  display: flex;
+  align-items: baseline;
+}
+
+.flex-end {
+  display: flex;
+  align-self: flex-end;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.align-start {
+  display: flex;
+  align-items: flex-start;
+}
+
+.align-baseline {
+  display: flex;
+  align-items: baseline;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}

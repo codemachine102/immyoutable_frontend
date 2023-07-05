@@ -1,0 +1,12 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.profileLogout {
+  &__btn {
+    color: $white;
+
+    span {
+      font-size: 14px;
+    }
+  }
+}

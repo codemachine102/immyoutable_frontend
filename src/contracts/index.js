@@ -1,0 +1,1 @@
+export { NFTCollectionABI } from './NFTCollectionABI';

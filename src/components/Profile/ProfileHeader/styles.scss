@@ -1,0 +1,152 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 86px;
+  margin: 0 32px;
+  max-width: $maxContainerWidth;
+
+  &__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include transition;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    &--active {
+      background: rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  &__logo {
+    width: 173px;
+  }
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+
+    &Link {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+    }
+    &Img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      margin-bottom: 4px;
+      position: relative;
+
+      &--profile {
+        width: 38px;
+        // height: 45px;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    &Text {
+      font-family: $Plateia;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 18px;
+      letter-spacing: 0.07em;
+      color: $grey_shades_50;
+    }
+
+    &Ellipse {
+      background: linear-gradient(
+        90.03deg,
+        #69c4f8 -1.49%,
+        #ffffff 53.27%,
+        #48bdff 100%
+      );
+      box-shadow: -5px 0px 3px 2px $blue, 6px 0px 3px 2px $blue,
+        0px -1px 4px rgba($blue, 0.56), 0px 1px 8px rgba(0, 149, 255, 0.64);
+      width: 75%;
+      height: 1px;
+      margin-top: 7px;
+      margin-bottom: -7px;
+    }
+
+    &Number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 17px;
+      height: 17px;
+      padding: 0 4px;
+      border-radius: 30px;
+      background-color: $blue;
+      @include text_small;
+      color: $white;
+      position: absolute;
+      top: -2px;
+      right: -10px;
+    }
+
+    &Plan {
+      font-family: $CP;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      color: $grey_shades_10;
+
+      &--premium {
+        background-color: #2f73da;
+        background-image: $gradient_blue_button;
+        @include text_gradient;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+
+  &__button {
+    height: 54px;
+  }
+  @media screen and (max-width: $sm) {
+    margin: 0 16px;
+  }
+  @media screen and (max-width: $xs) {
+    height: 140px;
+    flex-direction: column;
+    padding: 16px 0;
+
+    &__menu {
+      width: 100%;
+      max-width: 260px;
+      justify-content: space-between;
+
+      &Link {
+        width: 32px;
+      }
+    }
+  }
+}

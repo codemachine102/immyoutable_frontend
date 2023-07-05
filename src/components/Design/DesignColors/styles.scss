@@ -1,0 +1,125 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.designColors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  row-gap: 16px;
+  padding: 0 20px;
+  max-width: 664px;
+  width: 100%;
+
+  &__color {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    // flex: 1 1 25%;
+    padding: 16px 0;
+    // max-width: 156px;
+    cursor: pointer;
+    width: 20%;
+    min-width: 115px;
+
+    &Circle {
+      width: 76px;
+      height: 72px;
+      border: 1px solid $grey_shades_90;
+      border-radius: 100%;
+    }
+    &Title {
+      @include text_small;
+      color: $grey_shades_40;
+    }
+  }
+
+  &__loader {
+    width: 20%;
+    min-width: 115px;
+    padding: 16px 0;
+
+    &Circle {
+      width: 76px;
+      height: 72px;
+      transform: translate(-38px);
+    }
+    &Title {
+      width: 60px;
+      height: 14px;
+      transform: translate(-30px);
+    }
+  }
+
+  @media screen and (max-width: $xl) {
+    &__color,
+    &__loader {
+      width: 25%;
+      max-width: initial;
+    }
+  }
+  @media screen and (max-width: $lg) {
+    &__color,
+    &__loader {
+      min-width: initial;
+      &Circle {
+        width: 75px;
+        height: 73px;
+      }
+    }
+    &__loader {
+      &Circle {
+        transform: translate(-37px);
+      }
+    }
+  }
+  @media screen and (max-width: $md) {
+    padding: 0;
+
+    &__color,
+    &__loader {
+      width: calc(100% / 3);
+      min-width: initial;
+      gap: 8px;
+      &Circle {
+        width: 55px;
+        height: 54px;
+      }
+    }
+    &__loader {
+      &Circle {
+        transform: translate(-28px);
+      }
+    }
+  }
+  @media screen and (max-width: $sm) {
+    justify-content: center;
+
+    &__color,
+    &__loader {
+      &Circle {
+        width: 75px;
+        height: 73px;
+      }
+    }
+    &__loader {
+      &Circle {
+        transform: translate(-37px);
+      }
+    }
+  }
+  @media screen and (max-width: $xs) {
+    &__color,
+    &__loader {
+      &Circle {
+        width: 47px;
+        height: 44px;
+      }
+    }
+    &__loader {
+      &Circle {
+        transform: translate(-23px);
+      }
+    }
+  }
+}

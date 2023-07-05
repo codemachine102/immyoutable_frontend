@@ -1,0 +1,39 @@
+@import '../../scss/mixins.scss';
+@import '../../scss/vars.scss';
+
+.tooltip {
+  &__text {
+    font-family: $CP;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    color: $white;
+    background-color: rgba(0, 0, 0, 1);
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.tippy {
+    &-box {
+      filter: drop-shadow(0px 0px 11px $shadow_blue);
+      backdrop-filter: blur(6px);
+      background: rgba(0, 0, 0, 1);
+      border-radius: 8px;
+      padding: 8px;
+    }
+  }
+
+  .tippy {
+    &-svg-arrow {
+      fill: rgba(0, 0, 0, 1);
+    }
+    &-content {
+      padding: 0;
+    }
+  }
+}

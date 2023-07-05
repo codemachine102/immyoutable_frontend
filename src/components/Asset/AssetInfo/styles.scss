@@ -1,0 +1,73 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.assetInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__university {
+    font-family: $CP;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: $grey_shades_20;
+  }
+
+  &__owned {
+    font-family: $CP;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+    color: $grey_shades_20;
+
+    span {
+      color: $white;
+    }
+  }
+
+  &__subtitle {
+    // display: flex;
+    // align-items: baseline;
+
+    @include text_profileSubtitle;
+    color: $white;
+  }
+
+  @media screen and (max-width: $md) {
+    &__subtitle {
+      display: flex;
+      flex-direction: column;
+
+      &Dash {
+        display: none;
+      }
+      span {
+        white-space: nowrap;
+      }
+    }
+  }
+
+  @media screen and (max-width: $sm) {
+    gap: 8px;
+    text-align: center;
+    align-items: center;
+
+    &__university {
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    &__owned {
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    &__subtitle {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}

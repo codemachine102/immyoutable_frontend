@@ -1,0 +1,301 @@
+@import '../../scss/vars.scss';
+@import '../../scss/mixins.scss';
+
+.button {
+  border-radius: 32px;
+  padding: 0 32px;
+  height: 56px;
+  background: $dark;
+  color: $white;
+  position: relative;
+  overflow: hidden;
+
+  @include flex-center;
+  @include transition;
+
+  span {
+    font-family: $Plateia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 13px;
+    min-height: 16px;
+    position: relative;
+    z-index: 2;
+    // text-transform: capitalize;
+  }
+
+  &--full {
+    &--transparent {
+      background: transparent;
+      color: $white;
+      border: 1px solid $white;
+    }
+    &--orange {
+      color: $white;
+      background: $orange;
+    }
+    &--blue {
+      color: $white;
+      background: $blue;
+    }
+    &--blueGradient {
+      background-color: #2f73da;
+      background-image: $gradient_blue_button;
+    }
+    &--red {
+      color: $white;
+      background: $red;
+    }
+    &--disabled {
+      background: $grey_shades_40;
+      color: $grey_shades_80;
+
+      .button__bg {
+        background: $grey_shades_40;
+      }
+    }
+  }
+
+  &--outline {
+    &--blue {
+      background: transparent;
+      color: $white;
+      border: 1px solid $blue;
+    }
+    &--red {
+      background: transparent;
+      color: $white;
+      border: 1px solid $red;
+    }
+    &--disabled {
+      background: transparent;
+      color: $grey_shades_80;
+      border: 1px solid $grey_shades_90;
+    }
+  }
+
+  &--textSecondary {
+    span {
+      color: inherit;
+      font-family: $CP;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    &--blue {
+      color: $white;
+    }
+  }
+
+  &--text {
+    &--blue {
+      color: $blue;
+    }
+  }
+
+  &--text,
+  &--textSecondary {
+    padding: 0;
+    height: auto;
+    border-radius: 0;
+
+    &--blue {
+      background: transparent;
+      border: none;
+    }
+    &--blueGradient {
+      background-color: #2f73da;
+      background-image: $gradient_blue_button;
+      @include text_gradient;
+      transition: none;
+      span {
+        background-color: #2f73da;
+        background-image: $gradient_blue_button;
+        @include text_gradient;
+        transition: none;
+      }
+    }
+    &--red {
+      background: transparent;
+      color: $red;
+      border: none;
+    }
+    &--disabled {
+      color: $grey_shades_70;
+
+      span {
+        color: $grey_shades_70;
+      }
+    }
+  }
+
+  &--disabled {
+    cursor: initial;
+  }
+
+  &:hover {
+    .button {
+      &__bg {
+        opacity: 0;
+      }
+    }
+    &.button {
+      &--full {
+        &--blue {
+          background-color: $blue_hover;
+        }
+        &--blueGradient {
+          background-color: $blue_hover;
+          background-image: none;
+        }
+        &--red {
+          background-color: $red;
+        }
+        &--disabled {
+          background: $grey_shades_40;
+          color: $grey_shades_80;
+        }
+      }
+      &--outline {
+        &--blue {
+          background: transparent;
+          color: $blue_hover;
+          border: 1px solid $blue_hover_border;
+        }
+        &--red {
+          background: transparent;
+          color: $red;
+          border: 1px solid $red;
+        }
+        &--disabled {
+          background: transparent;
+          color: $grey_shades_80;
+          border: 1px solid $grey_shades_90;
+        }
+      }
+      &--text,
+      &--textSecondary {
+        &--blue {
+          color: $blue_hover;
+        }
+        &--blueGradient {
+          color: $blue_hover;
+          @include text_notGradient;
+          background: none;
+          transition: none;
+          span {
+            color: $blue_hover;
+            @include text_notGradient;
+            background: none;
+            transition: none;
+          }
+        }
+        &--red {
+          color: $red;
+        }
+        &--disabled {
+          color: $grey_shades_70;
+        }
+      }
+    }
+  }
+  &:active {
+    .button {
+      &__bg {
+        opacity: 0;
+      }
+    }
+    &.button {
+      &--full {
+        &--orange {
+          background-color: $orange_pressed;
+        }
+        &--blue {
+          background-color: $blue_pressed;
+        }
+        &--blueGradient {
+          background-color: $blue_pressed;
+          background-image: none;
+        }
+        &--red {
+          background-color: $red;
+        }
+        &--disabled {
+          background-color: $grey_shades_40;
+        }
+      }
+      &--outline {
+        &--blue {
+          background: $blue_pressed_border;
+          color: $blue_pressed;
+          border: 1px solid $blue_pressed_border;
+        }
+        &--red {
+          background: transparent;
+          color: $red;
+          border: 1px solid $red;
+        }
+        &--disabled {
+          background: transparent;
+          color: $grey_shades_80;
+          border: 1px solid $grey_shades_90;
+        }
+      }
+      &--text,
+      &--textSecondary {
+        &--blue {
+          color: $blue_pressed;
+        }
+        &--blueGradient {
+          color: $blue_pressed;
+          @include text_notGradient;
+          background: none;
+          transition: none;
+          span {
+            color: $blue_pressed;
+            @include text_notGradient;
+            background: none;
+            transition: none;
+          }
+        }
+        &--red {
+          color: $red;
+        }
+        &--disabled {
+          color: $grey_shades_70;
+        }
+      }
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    opacity: 1;
+    @include transition;
+    &--orange {
+      background: $gradient_orange;
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    z-index: 2;
+    position: relative;
+
+    &--before {
+      margin-right: 8px;
+    }
+
+    &--after {
+      margin-left: 8px;
+    }
+  }
+}

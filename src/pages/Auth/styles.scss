@@ -1,0 +1,129 @@
+@import '../../scss/mixins.scss';
+@import '../../scss/vars.scss';
+
+.auth {
+  max-width: 600px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0;
+
+  &__container {
+    width: 384px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+
+  &__title {
+    font-family: $Plateia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+    color: $grey_shades_05;
+  }
+
+  &__subtitle {
+    @include text_regular;
+    color: $grey_shades_40;
+    max-width: 414px;
+    display: flex;
+    align-self: center;
+  }
+
+  &__select {
+    margin-right: 18px;
+  }
+
+  &__input {
+    flex: 1;
+
+    &--small {
+      max-width: calc(50% - 9px);
+    }
+  }
+
+  &__brokenLink {
+    width: 158px;
+    display: flex;
+    align-self: center;
+  }
+
+  &__inputs {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  &__agree {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    a {
+      color: $blue;
+    }
+
+    &Text {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 4px;
+
+      font-family: $CP;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      color: $white;
+    }
+  }
+
+  &__text {
+    font-family: 'Codec Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+
+    color: $grey_shades_40;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 4px;
+  }
+
+  &__allInputs {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  @media screen and (max-width: $md) {
+    padding: 80px 0;
+  }
+  @media screen and (max-width: $sm) {
+    padding-top: 100px;
+
+    &__container {
+      width: 100%;
+    }
+    &__inputs {
+      flex-direction: column;
+    }
+    &__input {
+      &--small {
+        max-width: 100%;
+      }
+    }
+    &__agree {
+      &Text {
+        font-size: 12px;
+      }
+    }
+    &__text {
+      font-size: 14px;
+    }
+  }
+}

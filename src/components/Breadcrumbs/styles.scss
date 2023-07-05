@@ -1,0 +1,22 @@
+@import '../../scss/vars.scss';
+@import '../../scss/mixins.scss';
+
+.breadcrumbs {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+
+  font-family: $CP;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: $grey_shades_30;
+
+  &__link {
+    color: $grey_shades_50;
+  }
+  &__separator {
+    color: $grey_shades_60;
+  }
+}

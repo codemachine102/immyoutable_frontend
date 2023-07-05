@@ -1,0 +1,63 @@
+@import '../../scss/mixins.scss';
+@import '../../scss/vars.scss';
+
+.countrySelect {
+  &__container {
+    width: 78px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $grey_shades_60;
+    border-radius: 4px;
+    position: relative;
+
+    &:hover {
+      border-color: $grey_shades_30;
+
+      .countrySelect {
+        &__options {
+          border-color: $grey_shades_30;
+        }
+      }
+    }
+  }
+
+  &__input {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+  }
+
+  &__options {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 384px;
+    background-color: $dark_bg;
+    border: 1px solid $grey_shades_60;
+    border-radius: 4px;
+    max-height: 200px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  &__option {
+    cursor: pointer;
+    text-align: left;
+    padding: 10px 15px;
+
+    @include text_regular;
+    color: $white;
+  }
+
+  &__arrow {
+    margin-left: 4px;
+  }
+}

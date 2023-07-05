@@ -1,0 +1,153 @@
+@import './vars.scss';
+
+@mixin text_bigTitle {
+  font-family: $Plateia;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 69px;
+}
+
+@mixin text_profileTitle {
+  font-family: $Plateia;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 65px;
+  letter-spacing: 0.05em;
+}
+@mixin text_profileSubtitle {
+  font-family: $Plateia;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@mixin text_title {
+  font-family: $CP;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+}
+
+@mixin text_regular {
+  font-family: $CP;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin text_placeholder {
+  font-family: $CP;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin text_small {
+  font-family: $CP;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin transition {
+  transition: all 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+@mixin transition_linear {
+  transition: all 200ms linear 0ms;
+}
+
+@mixin shadow($color) {
+  box-shadow: 0px 0px 7px 1px $color;
+}
+
+@mixin profileCard_shadow {
+  box-shadow: inset 0px 0px 17px $profileCard_shadow;
+  border-radius: 16px;
+}
+
+@mixin text_gradient {
+  background-size: 100%;
+  background-repeat: repeat;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+@mixin text_notGradient {
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: currentcolor;
+  -moz-background-clip: border-box;
+  -moz-text-fill-color: currentcolor;
+}
+
+@mixin swiper_button {
+  background-image: url(../assets/icons/slider_arrow.svg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  width: 40px;
+}
+
+@mixin text_newsTitle {
+  font-family: $CP;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+@mixin text_newsText {
+  font-family: $CP;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+}
+@mixin text_newsSmall {
+  font-family: $CP;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+@mixin border_gradient($border, $gradient) {
+  background-clip: padding-box; /* !importanté */
+  border: solid $border transparent; /* !importanté */
+  position: relative;
+  box-sizing: border-box;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -$border; /* !importanté */
+    border-radius: inherit; /* !importanté */
+    background: $gradient;
+  }
+}
+@mixin disable_border_gradient {
+  background-clip: initial;
+  border: none;
+
+  &::before {
+    display: none;
+  }
+}

@@ -1,0 +1,551 @@
+@import '../../scss/vars.scss';
+@import '../../scss/mixins.scss';
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  &__title {
+    @include text_profileTitle;
+    color: $white;
+  }
+
+  &__info {
+    display: flex;
+    gap: 32px;
+  }
+
+  &__infoBody {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &__infoLeft {
+    width: 100%;
+    max-width: 314px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &__sliders {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    overflow: hidden;
+    width: 100%;
+    padding: 0 50px;
+    margin: 0 -50px;
+  }
+
+  &__subtitle {
+    display: flex;
+    align-items: baseline;
+
+    @include text_profileSubtitle;
+    color: $white;
+
+    h3 {
+      @include text_profileSubtitle;
+      color: $white;
+    }
+
+    &Plus {
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      background-color: $blue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+
+      img {
+      }
+    }
+
+    &--disabled {
+      h3 {
+        color: $grey_shades_70;
+      }
+
+      .profile__subtitlePlus {
+        background-color: $grey_shades_90;
+        img {
+        }
+
+        &:hover {
+          background-color: $grey_shades_90;
+        }
+        &:active {
+          background-color: $grey_shades_90;
+        }
+      }
+    }
+  }
+
+  &__password {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &Text {
+      font-family: $CP;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      color: $white;
+    }
+  }
+
+  &__edit {
+  }
+
+  &__education {
+    width: 58%;
+  }
+
+  &__work {
+    width: 38%;
+  }
+}
+
+.profileEdit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__container {
+    max-width: 364px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__form {
+    width: 100%;
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  &__photo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    &Container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 32px 0;
+    }
+  }
+}
+
+.profileHome {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+
+  &__info {
+    // max-width: 314px;
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    flex: 0 0 24%;
+    width: 24%;
+    min-width: 240px;
+  }
+
+  &__newsfeed {
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    // max-width: 45%;
+    flex: 1 1 auto;
+  }
+
+  &__sidebar {
+    // max-width: 314px;
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    flex: 0 0 24%;
+    width: 24%;
+    min-width: 270px;
+  }
+
+  &__education {
+    display: flex;
+    align-items: center;
+    background: $profileCard_background;
+    box-shadow: inset 0px 0px 17px $profileCard_shadow;
+    border-radius: 16px;
+    padding: 32px 16px;
+  }
+
+  &__slider {
+  }
+}
+
+.profileBilling {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  &__info {
+    display: flex;
+    gap: 175px;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    h3 {
+      font-family: $Plateia;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 32px;
+      color: $grey_shades_10;
+    }
+    &Purchase {
+      font-family: $Plateia;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+
+      background-color: #2f73da;
+      background-image: $gradient_blue_button;
+      @include text_gradient;
+    }
+    &Title {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+    }
+    &Card {
+      font-family: $CP;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 28px;
+      color: $grey_shades_10;
+    }
+  }
+
+  &__plans {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &Container {
+      display: flex;
+      gap: 16px;
+    }
+    &Title {
+      font-family: $Plateia;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 32px;
+      color: $grey_shades_10;
+    }
+  }
+
+  &__plan {
+  }
+
+  &__universities {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &Container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      padding: 42px 0;
+
+      background: rgba($black, 0.01);
+      /* inner shadow */
+
+      box-shadow: inset 0px 0px 17px $profileCard_shadow,
+        inset 0px 1px 0px 1px $white;
+      border-radius: 12px;
+
+      p {
+        font-family: $CP;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+
+        color: $grey_shades_15;
+      }
+    }
+  }
+}
+
+.profileAsset {
+  &__container {
+    display: flex;
+    gap: 32px;
+  }
+  &__card {
+    flex: 0 0 404px;
+    align-self: flex-start;
+  }
+  &__info {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+@media screen and (max-width: $lg) {
+  .profile {
+    &__education {
+      width: 600px;
+    }
+  }
+  .profileHome {
+    column-gap: 16px;
+    row-gap: 32px;
+  }
+  .profileAsset {
+    &__container {
+      gap: 16px;
+    }
+    &__card {
+      flex: 0 0 322px;
+    }
+    &__info {
+      // flex: 1 1 71%;
+    }
+  }
+}
+
+@media screen and (max-width: $md) {
+  .profile {
+    &__info {
+      &--columnMd {
+        flex-direction: column;
+      }
+      &--columnXs {
+        gap: 16px;
+      }
+    }
+    &__personal {
+      max-width: initial;
+      flex: 1;
+      min-width: 275px;
+    }
+    &__education--top {
+      width: 100%;
+      .profile__educationSlider {
+        .slider__item {
+          width: 183px;
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+          display: none;
+        }
+      }
+    }
+    &__sliders--top {
+      flex: 1 1;
+    }
+    &__infoLeft {
+      max-width: initial;
+      flex: 1 1;
+      min-width: 260px;
+    }
+    &__checklist {
+      max-width: initial;
+    }
+  }
+  .profileHome {
+    flex-wrap: wrap;
+
+    &__info {
+      order: 1;
+      flex: 1 1 auto;
+      width: calc(100% / 3 - 32px);
+      gap: 16px;
+
+      &--half {
+        width: calc(100% / 2 - 32px);
+      }
+      &--big {
+        width: calc(70% - 32px);
+        // max-width: calc(100% / 3 * 2 - 32px);
+        flex-direction: row;
+      }
+    }
+    &__sidebar {
+      order: 2;
+      flex: 2 1 auto;
+      // width: auto;
+      // max-width: 350px;
+      flex-direction: row;
+      width: calc(100% / 3 * 2 - 32px);
+      gap: 16px;
+      align-items: flex-start;
+
+      &--half {
+        flex: 1 1 auto;
+        width: calc(100% / 2 - 32px);
+      }
+      &--big {
+        width: calc(30% - 32px);
+        min-width: 200px;
+        // max-width: calc(100% / 3 - 32px);
+      }
+    }
+    &__newsfeed {
+      order: 4;
+      // flex-direction: row;
+    }
+    &__personal {
+      max-width: 100%;
+      flex: 1;
+
+      &--half {
+        width: calc(60% - 8px);
+      }
+    }
+    &__education {
+      flex: 1;
+      width: 50%;
+      height: 100%;
+      justify-content: center;
+    }
+    &__crypto {
+      width: 50%;
+      gap: 8px;
+
+      &--half {
+        width: 100%;
+      }
+      &--small {
+        flex: 1;
+        width: calc(40% - 8px);
+      }
+    }
+    &__checklist {
+      max-width: initial;
+      padding: 24px;
+
+      h3 {
+        font-size: 20px;
+      }
+    }
+  }
+  .profileBilling {
+    &__plans {
+      &Container {
+        flex-wrap: wrap;
+      }
+    }
+    &__plan {
+      width: calc(50% - 8px);
+    }
+  }
+  .profileAsset {
+    &__card {
+      flex: 1 1 36%;
+    }
+    &__info {
+      flex: 1 1 64%;
+    }
+  }
+}
+
+@media screen and (max-width: $sm) {
+  .profile {
+    &__title {
+      font-size: 24px;
+    }
+    &__education {
+      width: 100%;
+      &Slider {
+        .slider__item {
+          width: 183px;
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+          display: none;
+        }
+      }
+    }
+    &__sliders:not(.profile__sliders--top) {
+      overflow: visible;
+      padding: 0;
+      margin: 0;
+    }
+    &__checklist {
+      padding: 32px 16px;
+    }
+  }
+  .profileAsset {
+    &__container {
+      flex-direction: column;
+    }
+    &__card {
+      // padding: 0 50px;
+      width: 80%;
+      align-self: center;
+    }
+  }
+  .profileBilling {
+    &__plan {
+      width: 100%;
+    }
+    &__info {
+      flex-direction: column;
+      gap: 24px;
+    }
+    &__universities {
+      &Container {
+        padding: 22px;
+      }
+    }
+  }
+  .profileHome {
+    &__crypto {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: $xs) {
+  .profile {
+    &__info {
+      &--columnXs {
+        flex-direction: column;
+        gap: 32px;
+      }
+    }
+  }
+}

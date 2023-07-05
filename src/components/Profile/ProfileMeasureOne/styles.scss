@@ -1,0 +1,17 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.profileMeasureOne {
+  width: auto;
+  border-radius: 12px;
+  overflow: hidden;
+
+  &__error {
+    @include text_regular;
+    color: $red;
+  }
+
+  &--error {
+    border-radius: 0;
+  }
+}

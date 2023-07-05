@@ -1,0 +1,110 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.onboardingHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 86px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+
+  z-index: 10;
+  @include transition_linear;
+  background: rgba(0, 0, 0, 0);
+
+  &__button {
+    // width: 134px;
+    height: 54px;
+
+    span {
+      font-weight: 500;
+      font-size: 16px;
+      text-transform: initial;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    width: 305px;
+  }
+
+  &__img {
+    width: 305px;
+
+    img {
+      width: 185px;
+    }
+  }
+
+  &__menu {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+
+    &Text {
+      font-family: $Plateia;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 18px;
+      letter-spacing: 0.07em;
+      color: $grey_shades_50;
+    }
+
+    &Ellipse {
+      background: linear-gradient(
+        90.03deg,
+        #69c4f8 -1.49%,
+        #ffffff 53.27%,
+        #48bdff 100%
+      );
+      box-shadow: -5px 0px 3px 2px $blue, 6px 0px 3px 2px $blue,
+        0px -1px 4px rgba($blue, 0.56), 0px 1px 8px rgba(0, 149, 255, 0.64);
+      width: 75%;
+      height: 1px;
+      margin-top: 7px;
+      margin-bottom: -7px;
+    }
+  }
+
+  &--active {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  @media screen and (max-width: $lg) {
+    &__menu {
+      display: none;
+    }
+    &__img {
+      width: auto;
+    }
+    &__buttons {
+      width: auto;
+    }
+  }
+  @media screen and (max-width: $sm) {
+    padding: 0 24px;
+    &__button {
+      &--login {
+        display: none;
+      }
+    }
+  }
+  @media screen and (max-width: $xs) {
+    &__img {
+      img {
+        width: 119px;
+      }
+    }
+  }
+}

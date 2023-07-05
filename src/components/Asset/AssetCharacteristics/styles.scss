@@ -1,0 +1,68 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.assetCharacteristics {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: auto auto;
+    gap: 24px 16px;
+  }
+
+  &__item {
+    background: $profileCard_background;
+    border: 1px solid rgba($blue, 0.32);
+    box-shadow: inset 0px 0px 20px rgba($blue, 0.66);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+
+    h4 {
+      font-family: $Plateia;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 32px;
+      color: $blue;
+    }
+
+    p {
+      font-family: $CP;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 32px;
+      color: $grey_shades_10;
+      display: flex;
+      align-items: center;
+    }
+
+    &Img {
+      width: 32px;
+      height: auto;
+      margin-right: 8px;
+    }
+  }
+  @media screen and (max-width: $sm) {
+    &__item {
+      padding: 24px 11px;
+
+      h4 {
+        font-size: 12px;
+      }
+      p {
+        font-size: 12px;
+        line-height: 20px;
+      }
+    }
+  }
+}

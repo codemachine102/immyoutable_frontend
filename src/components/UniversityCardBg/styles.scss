@@ -1,0 +1,183 @@
+@import '../../scss/vars.scss';
+@import '../../scss/mixins.scss';
+
+.universityCardBg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 12px;
+  text-align: center;
+
+  background: $profileCard_background;
+  border: 1px solid $blue;
+  box-shadow: inset 0px 0px 8px rgba($universityCard_shadow_blue, 0.66);
+  border-radius: 7px;
+  position: relative;
+  flex: 1;
+
+  color: $white;
+
+  h5 {
+    font-family: $Plateia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    @include text_gradient;
+  }
+
+  &__img {
+    background: #ffffff;
+    border: 1px solid $blue;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1/1;
+    width: 80%;
+
+    img {
+      width: 80%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    li {
+      font-family: $Plateia;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 7px;
+      line-height: 10px;
+      @include text_gradient;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px;
+
+    background: rgba($white, 0.02);
+    border: 1px solid $blue;
+    @include shadow($blue);
+    backdrop-filter: blur(4.5px);
+
+    border-radius: 57px;
+
+    img {
+      width: 14px;
+      cursor: pointer;
+    }
+
+    &Tooltip {
+      margin-bottom: 25px;
+    }
+  }
+
+  &--big {
+    gap: 26px;
+    padding: 78px 12px;
+
+    .universityCard {
+      h5 {
+        font-size: 20px;
+        line-height: 26px;
+      }
+      &__info {
+        gap: 26px;
+
+        li {
+          font-size: 13px;
+          line-height: 19px;
+        }
+      }
+      &__planet {
+        width: 122px;
+        height: auto;
+        bottom: -22px;
+        left: -29px;
+      }
+      &__icons {
+        padding: 19px;
+        top: -11px;
+        right: -11px;
+
+        img {
+          width: 26px;
+        }
+      }
+    }
+  }
+
+  &--blue {
+    border: 1px solid $blue;
+    box-shadow: inset 0px 0px 8px rgba($universityCard_shadow_blue, 0.66);
+
+    .universityCard {
+      &__icons {
+        border: 1px solid $universityCard_shadow_blue;
+        @include shadow($blue);
+      }
+    }
+    h5,
+    li {
+      background-color: $blue;
+      background-image: $uniGradient__blue;
+    }
+  }
+
+  &--orange {
+    border: 1px solid $universityCard_border_orange;
+    box-shadow: inset 0px 0px 8px rgba($universityCard_shadow_orange, 0.79);
+
+    .universityCard {
+      &__icons {
+        border: 1px solid $universityCard_border_orange;
+        @include shadow($universityCard_shadow_orange);
+      }
+    }
+    h5,
+    li {
+      background-color: $universityCard_border_orange;
+      background-image: $uniGradient__orange;
+    }
+  }
+
+  &--purple {
+    border: 1px solid $universityCard_border_purple;
+    box-shadow: inset 0px 0px 8px rgba($universityCard_shadow_purple, 0.84);
+
+    .universityCard {
+      &__icons {
+        border: 1px solid $universityCard_border_purple;
+        @include shadow($universityCard_shadow_purple);
+      }
+    }
+    h5,
+    li {
+      background-color: $universityCard_border_purple;
+      background-image: $uniGradient__purple;
+    }
+  }
+
+  &--disabled {
+    background: rgba(0, 16, 48, 0.03);
+    backdrop-filter: blur(1.5px);
+    box-shadow: none;
+    border-color: rgba($blue, 0.3);
+
+    h5,
+    li {
+      background: none;
+      color: $grey_shades_80;
+      @include text_notGradient;
+    }
+  }
+}

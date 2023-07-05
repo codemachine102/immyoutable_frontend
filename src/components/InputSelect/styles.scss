@@ -1,0 +1,73 @@
+@import '../../scss/mixins.scss';
+@import '../../scss/vars.scss';
+
+.inputSelect {
+  &__container {
+    @include text_placeholder;
+    @include transition;
+    color: $grey_shades_05;
+    background: transparent;
+    border: 1px solid $grey_shades_60;
+    border-radius: 4px;
+    padding: 16px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  &__input {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    height: 100%;
+  }
+
+  &__options {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 384px;
+    background-color: $dark_bg;
+    border: 1px solid $grey_shades_60;
+    border-radius: 4px;
+    max-height: 200px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  &__option {
+    cursor: pointer;
+    text-align: left;
+    padding: 10px 15px;
+
+    @include text_regular;
+  }
+
+  &__arrow {
+    @include transition;
+    &--open {
+      transform: rotateX(180deg);
+    }
+  }
+
+  &__label {
+    @include text_placeholder;
+    line-height: 1;
+    color: $grey_shades_50;
+    background-color: transparent;
+    pointer-events: none;
+    padding: 0 4px;
+
+    position: absolute;
+    left: 12px;
+    top: 0;
+    transform: translate(0, -8px);
+    transform-origin: top left;
+    @include transition;
+    background-color: $dark_bg;
+  }
+}

@@ -1,0 +1,24 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.mintLoader {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &__Bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    g {
+      transform: rotateZ(-90deg) rotateX(180deg);
+    }
+    circle {
+      transition: 1s;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+export { DesignTabs } from './DesignTabs';
+export { DesignStudent } from './DesignStudent';
+export { DesignMenu } from './DesignMenu';
+export { DesignOptions } from './DesignOptions';
+export { DesignColors } from './DesignColors';
+export { DesignLogos } from './DesignLogos';
+export { MintLoader } from './MintLoader';
+export { DesignRender } from './DesignRender';
+export { DesignMint } from './DesignMint';

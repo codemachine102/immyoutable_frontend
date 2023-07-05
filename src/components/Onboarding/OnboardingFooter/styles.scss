@@ -1,0 +1,85 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.onboardingFooter {
+  padding-left: 80px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  min-height: 74px;
+
+  &--margin {
+    margin-bottom: 60px;
+    margin-top: 150px;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 46px;
+  }
+
+  li {
+    font-family: $Plateia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: $grey_shades_40;
+  }
+
+  &__logo {
+    position: absolute;
+    top: -60px;
+    right: 0;
+    // transform: translateY(-50%);
+    z-index: -1;
+
+    &_img {
+      width: 230px;
+      position: absolute;
+      top: 0;
+      right: 290px;
+      transform: translateY(-50%);
+      // animation: bounce 2s;
+      // animation-direction: alternate;
+      // animation-timing-function: cubic-bezier(0.1, 0.01, 0.9, 0.9);
+      // animation-iteration-count: infinite;
+    }
+
+    &_bg {
+      width: 1200px;
+      position: absolute;
+      top: 0;
+      right: -200px;
+      transform: translateY(-50%);
+    }
+  }
+
+  @media screen and (max-width: $sm) {
+    align-items: center;
+    padding: 0 24px;
+    &__menu {
+      gap: 10px;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: $xs) {
+    align-items: center;
+    height: auto;
+    padding: 40px 0;
+
+    &__menu {
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+      width: 100%;
+    }
+  }
+}

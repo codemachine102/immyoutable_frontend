@@ -1,0 +1,85 @@
+//colors
+$white: #fff;
+$black: #000;
+$grey_shades_05: #f4f6f8;
+$grey_shades_10: #eaedf2;
+$grey_shades_15: #dfe4eb;
+$grey_shades_20: #d4dbe4;
+$grey_shades_30: #bfc8d7;
+$grey_shades_40: #a9b6c9;
+$grey_shades_50: #94a4bc;
+$grey_shades_60: #7f8da3;
+$grey_shades_70: #69778b;
+$grey_shades_80: #546072;
+$grey_shades_85: #495566;
+$grey_shades_90: #3e4a5a;
+$grey_shades_95: #343e4d;
+$grey_shades_100: #293341;
+$red: #f43655;
+$dark: #232323;
+$dark_bg: #0c0e0e;
+$placeholder: #bccde9;
+$green: #24cf9c;
+$orange: #fa572f;
+$orange_focused: #ef8f1c;
+$orange_pressed: #e35607;
+//buttons
+$blue: #0882d9;
+$blue_hover: #379ae0;
+$blue_hover_border: rgba(55, 154, 224, 0.5);
+$blue_focused: #65b2e8;
+$blue_focused_border: rgba(101, 178, 232, 0.5);
+$blue_pressed: #94c9ef;
+$blue_pressed_border: rgba(148, 201, 239, 0.5);
+//fonts
+$CP: 'Codec Pro', sans-serif;
+$Plateia: 'Plateia', sans-serif;
+//gradien
+$gradient_orange: linear-gradient(270deg, #fb5130 0%, #ed9719 100%);
+$gradient_blue: linear-gradient(to right, rgba(#0788aa, 19%), #006f8d);
+$gradient_blue_button: linear-gradient(90deg, #2f73da 2.01%, #00d1ff 45.64%);
+$gradient_blue_hover: linear-gradient(to right, rgba(#32d4ff, 19%), #00c8ff);
+$gradient_darkBlue: linear-gradient(to right, #0acffe, #495aff);
+$gradient_grey: linear-gradient(to right, #69778b, #69778b);
+$orange_gradientStart: #fb5130;
+$orange_gradientEnd: #ed9719;
+$grey_gradientStart: #414146;
+$grey_gradientEnd: #e1e1d1;
+$purple_gradientStart: #deaff3;
+$purple_gradientEnd: #af35f8;
+//profile
+$profile_background: #0d0d15;
+$profileCard_background: rgba(208, 179, 255, 0.01);
+$profileCard_shadow: #6797de;
+$profileCard_background_disabled: rgba(0, 16, 48, 0.03);
+//university
+$universityCard_shadow_blue: #0882d9;
+$universityCard_shadow_orange: #e28a8f;
+$universityCard_shadow_purple: #dfc3fc;
+// $universityCard_border_blue: rgba(8, 130, 217, 0.66);
+$universityCard_border_orange: #deb3ab;
+$universityCard_border_purple: #d5c4fc;
+//dropdown
+$dropdownBackground: rgba(0, 0, 0, 0.7);
+$dropdownBackground_hover: #172233;
+$dropdownBackground_active: #0f141c;
+//universityCards
+$uniGradient__blue: linear-gradient(90deg, #4481eb 0%, #04befe 100%);
+$uniGradient__orange: linear-gradient(90deg, #ff9a9e 0%, #fad0c4 100%);
+$uniGradient__purple: linear-gradient(90deg, #e0c3fc 0%, #8ec5fc 100%);
+//general
+$general_background: #020214;
+//modal
+$modal_overlay: rgba(1, 4, 19, 0.9);
+//shadow
+$shadow_blue: #0f80d2;
+//media
+$xxl: 1919px; //1920 - 1
+$xl: 1511px; //1512 - 1
+$lg: 1199px; //1200 - 1
+$md: 1023px; //1024 - 1
+$sm: 767px; //768 - 1
+$xs: 575px; //576 - 1
+$xxs: 374px; //375 - 1
+// $xs: 360px;
+$maxContainerWidth: 1352px;

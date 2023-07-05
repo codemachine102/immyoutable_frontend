@@ -1,0 +1,67 @@
+image:
+  name: atlassian/default-image:3
+
+pipelines:
+  branches:   
+    master:
+      - step:
+          runs-on:
+            - self.hosted
+            - linux.shell
+          name: Build and publish docker image.
+          script:
+            - touch .env
+            - echo "REACT_APP_BASE_URL=${REACT_APP_BASE_URL_DEV}" > .env
+            - echo " NODE_ENV=${NODE_ENV}" >> .env
+            - apt-get update && apt-get install -y awscli
+            - aws configure set aws_access_key_id "${AWS_ACCESS_KEY_ID}"
+            - aws configure set aws_secret_access_key "${AWS_SECRET_ACCESS_KEY}"
+            - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin "${AWS_USERNAME}"
+            - export IMAGE_NAME="${AWS_USERNAME}/${IMAGE_NAME_DEV}:latest"
+            - export IMAGE_NAME_BUILD="${AWS_USERNAME}/${IMAGE_NAME_DEV}:${BITBUCKET_BUILD_NUMBER}"
+            - sudo docker build -t $IMAGE_NAME .
+            - sudo docker tag $IMAGE_NAME $IMAGE_NAME_BUILD
+            - sudo docker push $IMAGE_NAME
+            - sudo docker push $IMAGE_NAME_BUILD
+      - step:
+          name: Deploy to ECS
+          script:
+            - pipe: atlassian/aws-ecs-deploy:1.6.2
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: 'us-east-1'
+                CLUSTER_NAME: '${CLUSTER_ECS_DEV}'
+                SERVICE_NAME: '${SERVICE_ECS}'
+                FORCE_NEW_DEPLOYMENT: 'true'
+    prod:
+      - step:
+          runs-on:
+            - self.hosted
+            - linux.shell
+          name: Build and publish docker image.
+          script:
+            - touch .env
+            - echo "REACT_APP_BASE_URL=${REACT_APP_BASE_URL_PROD}" > .env
+            - echo " NODE_ENV=production" >> .env
+            - apt-get update && apt-get install -y awscli
+            - aws configure set aws_access_key_id "${AWS_ACCESS_KEY_ID}"
+            - aws configure set aws_secret_access_key "${AWS_SECRET_ACCESS_KEY}"
+            - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin "${AWS_USERNAME}"
+            - export IMAGE_NAME="${AWS_USERNAME}/${IMAGE_NAME_PROD}:latest"
+            - export IMAGE_NAME_BUILD="${AWS_USERNAME}/${IMAGE_NAME_PROD}:${BITBUCKET_BUILD_NUMBER}"
+            - sudo docker build -t $IMAGE_NAME .
+            - sudo docker tag $IMAGE_NAME $IMAGE_NAME_BUILD
+            - sudo docker push $IMAGE_NAME
+            - sudo docker push $IMAGE_NAME_BUILD
+      - step:
+          name: Deploy to ECS
+          script:
+            - pipe: atlassian/aws-ecs-deploy:1.6.2
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: 'us-east-1'
+                CLUSTER_NAME: '${CLUSTER_ECS_PROD}'
+                SERVICE_NAME: '${SERVICE_ECS_PROD}'
+                FORCE_NEW_DEPLOYMENT: 'false'

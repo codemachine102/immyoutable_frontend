@@ -1,0 +1,29 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.profileLogoutModal {
+  max-width: 450px;
+  text-align: center;
+
+  &__title {
+    @include text_title;
+
+    color: #ffffff;
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  @media screen and (max-width: $sm) {
+    &__btn {
+      padding: 0 16px;
+
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+}

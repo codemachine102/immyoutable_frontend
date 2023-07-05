@@ -1,0 +1,11 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.profileVerifyButton {
+  &--aproved {
+    color: $grey_shades_40;
+    span {
+      color: $grey_shades_40;
+    }
+  }
+}

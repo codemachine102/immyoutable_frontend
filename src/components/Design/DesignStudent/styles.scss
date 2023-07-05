@@ -1,0 +1,67 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.designStudent {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+
+  &__menu {
+    display: flex;
+  }
+
+  &__options {
+    display: flex;
+  }
+
+  &__render {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+    z-index: 1;
+    max-width: 404px;
+    width: calc(32% - 32px);
+  }
+
+  @media screen and (max-width: $xl) {
+    &__render {
+      gap: 48px;
+    }
+  }
+  @media screen and (max-width: $lg) {
+    &__render {
+      max-width: initial;
+      flex: 1;
+      width: calc(32% - 32px);
+    }
+  }
+  @media screen and (max-width: $md) {
+    gap: 16px;
+
+    &__render {
+      width: calc(40% - 16px);
+    }
+  }
+  @media screen and (max-width: $sm) {
+    flex-direction: column;
+
+    &__render {
+      width: 100%;
+
+      &Container {
+        margin: 0 40px;
+      }
+    }
+  }
+  @media screen and (max-width: $xs) {
+    // &__card {
+    //   padding: 0 16px;
+    // }
+  }
+  @media screen and (max-width: $xxs) {
+    // &__card {
+    //   padding: 0 8px;
+    // }
+  }
+}

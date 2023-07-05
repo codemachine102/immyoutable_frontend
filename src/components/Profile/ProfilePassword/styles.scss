@@ -1,0 +1,26 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.profilePassword {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__text {
+    font-family: $CP;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: $white;
+  }
+  &__title {
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  @media screen and (max-width: $sm) {
+    &__title {
+      gap: 16px;
+    }
+  }
+}

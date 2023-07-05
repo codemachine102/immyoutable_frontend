@@ -1,0 +1,52 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.profileAvatar {
+  position: relative;
+  width: 142px;
+  height: 142px;
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: 2px solid $blue;
+    box-shadow: 0px 0px 7px 6px $blue;
+    @include transition_linear;
+    object-fit: cover;
+  }
+  &__check {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 40px;
+    height: 40px;
+
+    background: $profile_background;
+    border: 2px solid $blue;
+    box-shadow: 0px 0px 7px 6px $blue;
+    border-radius: 32px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include transition_linear;
+  }
+
+  &--active {
+    .profileAvatar {
+      &__img {
+        border-color: $red;
+        box-shadow: 0px 0px 7px 6px $red;
+      }
+
+      &__check {
+        border-color: $red;
+        box-shadow: 0px 0px 7px 6px $red;
+      }
+    }
+  }
+}

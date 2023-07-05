@@ -1,0 +1,159 @@
+@import '../../scss/vars.scss';
+@import '../../scss/mixins.scss';
+
+.billingPlan {
+  width: 384px;
+  background: rgba($white, 0.01);
+  // box-shadow: inset 0px 0px 17px $profileCard_shadow;
+  box-shadow: inset 0px 0px 17px $profileCard_shadow,
+    inset 0px 1px 0px 1px $white;
+  border-radius: 12px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &--premium {
+    box-shadow: inset 0px 0px 54px rgba($universityCard_shadow_blue, 0.66);
+    padding: 30px;
+    border: 2px solid $universityCard_shadow_blue;
+  }
+
+  &__title {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    h3 {
+      font-family: $Plateia;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 32px;
+      color: $grey_shades_10;
+    }
+    span {
+      font-family: $Plateia;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 14px;
+      color: $grey_shades_40;
+    }
+
+    &--premium {
+      h3 {
+        color: $blue;
+      }
+    }
+    &--scholar {
+      h3 {
+        background-color: #2f73da;
+        background-image: $gradient_blue_button;
+        @include text_gradient;
+      }
+    }
+  }
+
+  &__price {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+
+    &--basic {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    h4 {
+      font-family: $CP;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 56px;
+      line-height: 49px;
+      color: $grey_shades_05;
+    }
+
+    span {
+      font-family: $Plateia;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 14px;
+      color: $grey_shades_40;
+    }
+
+    p {
+      font-family: $CP;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 26px;
+      color: $grey_shades_05;
+
+      span {
+        font-family: $CP;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 26px;
+        color: $grey_shades_05;
+      }
+    }
+  }
+
+  &__titleList {
+    font-family: $Plateia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: $grey_shades_30;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding-left: 28px;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: url('../../assets/icons/plan_check.svg');
+      }
+    }
+
+    &Title {
+      font-family: $CP;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      color: $grey_shades_15;
+    }
+    &Text {
+      font-family: $CP;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 18px;
+      color: $grey_shades_50;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  &__button {
+    margin-top: auto;
+    padding: 0;
+  }
+}

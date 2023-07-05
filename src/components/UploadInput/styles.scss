@@ -1,0 +1,79 @@
+@import '../../scss/vars.scss';
+@import '../../scss/mixins.scss';
+
+.uploadInput {
+  background: rgba(245, 245, 245, 0.08);
+  border: 1px dashed rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 18px;
+
+  @include transition_linear;
+
+  img {
+    width: 32px;
+    height: auto;
+  }
+
+  span {
+    font-family: $CP;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: $white;
+  }
+
+  &__delete {
+    cursor: pointer;
+    display: none;
+    color: $grey_shades_60;
+  }
+
+  &__file {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 4px;
+    border-radius: 4px;
+
+    span {
+      align-self: center;
+    }
+
+    &:hover {
+      background: rgba($white, 0.05);
+      color: $blue;
+
+      .uploadInput {
+        &__delete {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__error {
+    text-align: center;
+    @include text_small;
+    color: $red;
+  }
+
+  &--pointer {
+    cursor: pointer;
+    padding: 22px;
+
+    &:hover {
+      border: 1px dashed $blue;
+    }
+  }
+
+  &--error {
+    border: 1px solid $red;
+  }
+}

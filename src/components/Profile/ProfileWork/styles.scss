@@ -1,0 +1,9 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.profileWork {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}

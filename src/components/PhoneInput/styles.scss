@@ -1,0 +1,45 @@
+@import '../../scss/mixins.scss';
+
+.phoneInput {
+  @include text_placeholder;
+  @include transition;
+  color: $grey_shades_05;
+  background: transparent;
+  border: 1px solid $grey_shades_60;
+  border-radius: 4px;
+  padding: 16px 40px 16px 16px;
+  cursor: pointer;
+  flex: 1;
+
+  &:hover {
+    border-color: $grey_shades_30;
+    & + .input__label--filled {
+      color: $grey_shades_30;
+    }
+  }
+
+  &--error {
+    border-color: $red;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:focus-within .phoneInput {
+      border-color: $blue;
+    }
+  }
+
+  &__select {
+    margin-right: 18px;
+  }
+
+  &__error {
+    @include text_small;
+    color: $red;
+    padding-left: 16px;
+    text-align: left;
+  }
+}

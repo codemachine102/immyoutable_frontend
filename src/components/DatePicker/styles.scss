@@ -1,0 +1,21 @@
+@import '../../scss/mixins.scss';
+@import '../../scss/vars.scss';
+
+.datePicker {
+  &__input {
+    padding-right: 16px;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__calendar {
+    // display: none;
+    display: block;
+    position: absolute;
+    bottom: 70px;
+    z-index: 100;
+    max-width: inherit;
+  }
+}

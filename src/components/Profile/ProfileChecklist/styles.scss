@@ -1,0 +1,31 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.profileChecklist {
+  max-width: 314px;
+  padding: 32px;
+  background: $profileCard_background;
+  @include profileCard_shadow;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+
+  h3 {
+    @include text_profileSubtitle;
+    text-align: center;
+    color: $grey_shades_10;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    li {
+    }
+  }
+}

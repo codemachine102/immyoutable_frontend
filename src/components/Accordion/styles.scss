@@ -1,0 +1,58 @@
+@import '../../scss/vars.scss';
+@import '../../scss/mixins.scss';
+
+.accordion {
+  width: 100%;
+  max-width: 660px;
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0;
+
+    border-bottom: 2px solid $grey_shades_100;
+
+    &:first-child {
+      border-top: 2px solid $grey_shades_100;
+    }
+  }
+  &__answer {
+    overflow: hidden;
+    @include transition_linear;
+
+    p {
+      font-family: $CP;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 20px;
+      color: $grey_shades_10;
+    }
+  }
+  &__icon {
+    @include transition_linear;
+    width: 24px;
+    height: auto;
+    &--active {
+      width: 31px;
+      transform: rotate(-45deg);
+    }
+  }
+  &__button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex: 1;
+    @include text_newsTitle;
+    color: $grey_shades_10;
+    @include transition_linear;
+
+    &--active {
+      margin-bottom: 16px;
+    }
+  }
+}

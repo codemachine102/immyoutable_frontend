@@ -1,0 +1,55 @@
+@import '../../scss/vars.scss';
+@import '../../scss/mixins.scss';
+
+.form {
+  &__container {
+    width: 384px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+
+  &__input {
+    flex: 1;
+  }
+
+  &__resend {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    p {
+      font-family: $CP;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+      color: $grey_shades_40;
+    }
+
+    div {
+      font-family: $Plateia;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      margin-left: 4px;
+      cursor: pointer;
+      color: $blue;
+    }
+  }
+
+  &__recaptcha {
+    > div {
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  @media screen and (max-width: $sm) {
+    &__container {
+      width: 100%;
+    }
+  }
+}

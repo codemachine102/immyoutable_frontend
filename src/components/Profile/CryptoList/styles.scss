@@ -1,0 +1,267 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.cryptoList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 1;
+  position: relative;
+
+  &__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 44px;
+    padding: 1px;
+    cursor: pointer;
+    height: 90px;
+
+    $border: 1px;
+    background: $general_background;
+    @include border_gradient(1px, $gradient_blue);
+
+    &:hover::before {
+      background: $gradient_blue_hover;
+    }
+  }
+
+  &__logo {
+    width: auto;
+    max-height: 86px;
+    max-width: 86px;
+    border-radius: 100%;
+  }
+
+  &__text {
+    flex: 1;
+    font-family: 'Codec Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: left;
+    color: $grey_shades_05;
+    padding-top: 5px;
+    padding-left: 20px;
+  }
+
+  &__modal {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    &--width {
+      max-width: 384px;
+    }
+
+    &Btns {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    &List {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    &Input {
+      border-radius: 24px;
+    }
+
+    &Title {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    &Slug {
+      background: rgba($white, 0.08);
+      border-radius: 4px;
+      padding: 8px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        font-family: $Plateia;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+        color: $grey_shades_40;
+      }
+    }
+
+    &Price {
+      font-family: $Plateia;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 21px;
+      line-height: 48px;
+      text-align: center;
+      color: $grey_shades_20;
+    }
+
+    &Days {
+      font-family: $Plateia;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      text-align: center;
+      color: $grey_shades_20;
+    }
+
+    &Chart {
+      width: 260px;
+      height: 115px;
+
+      svg {
+        overflow: visible;
+      }
+    }
+
+    &ChartLine {
+      path {
+        filter: drop-shadow(0px 26px 12px rgba(28, 228, 255, 0.8))
+          drop-shadow(0px 7px 4px #119cff);
+      }
+    }
+
+    &ChartLoader {
+      width: '100%';
+      height: '100%';
+      display: 'flex';
+      align-items: 'center';
+      justify-content: 'center';
+    }
+  }
+
+  &__scroll {
+    width: 100%;
+    height: 25px;
+    position: absolute;
+    left: 0;
+    display: none;
+    z-index: 3;
+
+    &Container {
+      overflow: hidden;
+      border-radius: 16px;
+      position: relative;
+    }
+
+    &--top {
+      display: block;
+      top: 0;
+      background: linear-gradient(to bottom, rgba(white, 0.2), rgba(white, 0));
+    }
+    &--bottom {
+      display: block;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(white, 0.2), rgba(white, 0));
+    }
+  }
+
+  @media screen and (max-width: $md) {
+    gap: 8px;
+    border-radius: 16px;
+    max-height: 560px;
+
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &--small {
+      max-height: 300px;
+    }
+  }
+
+  @media screen and (max-width: $sm) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 24px;
+    gap: 16px;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    height: 95px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &__container {
+      background: rgba(208, 179, 255, 0.01);
+      box-shadow: inset 0px 0px 17px #6797de;
+      border-radius: 16px;
+    }
+
+    &__logo {
+      max-height: 60px;
+      max-width: 60px;
+
+      &--add {
+        max-height: 70px;
+        max-width: 70px;
+        cursor: pointer;
+      }
+    }
+
+    &__item {
+      border-radius: 0;
+      padding: 0;
+      height: initial;
+
+      background: initial;
+      @include disable_border_gradient;
+
+      &:hover::before {
+        background: initial;
+      }
+    }
+  }
+
+  @media screen and (max-width: $xs) {
+    height: 80px;
+
+    &__container {
+      background: rgba(208, 179, 255, 0.01);
+      box-shadow: inset 0px 0px 17px #6797de;
+      border-radius: 16px;
+    }
+    &__logo {
+      max-height: 45px;
+      max-width: 45px;
+
+      &--add {
+        max-height: 52px;
+        max-width: 52px;
+      }
+    }
+  }
+}

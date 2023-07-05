@@ -1,0 +1,25 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.profileSumsub {
+  width: 100%;
+  padding: 0 40px;
+
+  &__sdk {
+    width: 100%;
+  }
+
+  @media screen and (max-width: $sm) {
+    padding: 0;
+  }
+}
+
+.step {
+  .title {
+    color: white;
+  }
+}
+
+body.profileSumsub__sdkUi {
+  background-color: blue;
+}

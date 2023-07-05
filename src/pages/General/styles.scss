@@ -1,0 +1,294 @@
+@import '../../scss/vars.scss';
+@import '../../scss/mixins.scss';
+
+.general {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  &__header {
+    display: flex;
+    align-items: flex-end;
+    &Arrow {
+      cursor: pointer;
+      margin-bottom: 4px;
+      margin-right: auto;
+    }
+  }
+  &__title {
+    @include text_profileTitle;
+    color: $white;
+    margin-right: auto;
+    margin-left: -45px;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 24px;
+    @include text_newsText;
+
+    color: $white;
+    max-width: 890px;
+
+    a {
+      color: $blue;
+    }
+  }
+}
+
+.generalContact {
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+
+      &.generalContact__infoIcons {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 50px;
+
+        img {
+          width: 56px;
+        }
+      }
+    }
+    &Title {
+      font-family: $Plateia;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 32px;
+      color: $grey_shades_10;
+    }
+    &Text {
+      font-family: $CP;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 32px;
+      color: $grey_shades_10;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    &Title {
+      font-family: $Plateia;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 65px;
+      letter-spacing: 0.05em;
+      color: $white;
+    }
+
+    &Container {
+      width: 100%;
+      max-width: 384px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    &Button {
+      align-self: center;
+    }
+    &Error {
+      text-align: center;
+      @include text_small;
+      color: $red;
+    }
+  }
+}
+
+.generalFaq {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__text {
+    display: flex;
+    align-items: baseline;
+    align-self: center;
+    gap: 4px;
+
+    font-family: $CP;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: $grey_shades_40;
+  }
+}
+
+.generalNotFound {
+  justify-content: center;
+  align-items: flex-end;
+  flex: 1;
+  width: 43%;
+  position: relative;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  &__title {
+    font-family: $Plateia;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 120px;
+    line-height: 120px;
+    letter-spacing: 0.05em;
+
+    color: $grey_shades_30;
+    margin: 0;
+  }
+  &__text {
+    font-family: $CP;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 36px;
+
+    color: $grey_shades_15;
+  }
+  &__img {
+    position: absolute;
+    width: 800px;
+    right: 4%;
+    transform: translateX(100%);
+  }
+}
+
+@media screen and (max-width: $md) {
+  .generalNotFound {
+    width: 100%;
+
+    &__container {
+      align-self: flex-start;
+      margin-left: 32px;
+    }
+    &__img {
+      right: 70%;
+    }
+  }
+}
+
+@media screen and (max-width: $sm) {
+  .general {
+    gap: 24px;
+
+    &__title {
+      margin-left: 0;
+      font-size: 24px;
+      line-height: 32px;
+    }
+    &__header {
+      align-items: flex-start;
+
+      &Arrow {
+        margin-top: 3px;
+        margin-bottom: 0;
+        margin-right: 12px;
+        width: 32px;
+        height: 32px;
+      }
+    }
+    &__text {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+  .generalContact {
+    &__info {
+      &Title {
+        font-size: 14px;
+        line-height: 22px;
+      }
+      &Text {
+        font-size: 14px;
+        line-height: 22px;
+      }
+      li {
+        &.generalContact__infoIcons {
+          img {
+            width: 48px;
+          }
+        }
+      }
+    }
+    &__form {
+      gap: 16px;
+
+      &Title {
+        font-size: 18px;
+        line-height: 36px;
+      }
+      &Container {
+        gap: 12px;
+      }
+    }
+  }
+  .generalNotFound {
+    flex-direction: row;
+    gap: 0;
+    align-items: center;
+
+    &__container {
+      align-self: center;
+    }
+    &__title {
+      font-size: 100px;
+    }
+    &__img {
+      width: 48%;
+      position: relative;
+      right: initial;
+      transform: initial;
+    }
+  }
+}
+@media screen and (max-width: $xs) {
+  .general {
+    &__title {
+      font-size: 20px;
+    }
+  }
+  .generalNotFound {
+    flex-direction: column;
+    gap: 28px;
+
+    &__container {
+      margin: 0;
+      gap: 12px;
+    }
+    &__title {
+      font-size: 60px;
+      line-height: 90px;
+    }
+    &__text {
+      font-size: 20px;
+      line-height: 36px;
+    }
+    &__img {
+      width: 300px;
+      margin: 0 -20px 0 0;
+    }
+  }
+}
